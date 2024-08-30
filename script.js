@@ -24,7 +24,17 @@ function getHumanChoice(){
     // write if statement return rock , paper or scissors 
 
 
-    let message = prompt("rock , paper or scissors?");
+    let message = prompt("rock , paper or scissors?"); // ask user 
+    message = message.toLowerCase(); // ensures answer is not case-sensitive
+
+
+
+    while (message == null){
+        message = prompt("rock , paper or scissors")
+    } // ensures answer is put into prompt ! 
+
+
+
     if(message == "rock"){
         return "rock";
     } else if (message == "paper"){
@@ -32,9 +42,10 @@ function getHumanChoice(){
     } else if (message == "scissors"){
         return "scissors";
     } else {
-        return "try again :)";
-    }
-
+        // while(prompt( "try again :)")); // validation of input => could be next time turn into a function itself maybe 
+        return "try again";
+    }; 
+    
 
 
 // could alternatively do switch statement ! 
@@ -53,6 +64,19 @@ function getHumanChoice(){
     // }
 
 }
+
+console.log(getHumanChoice());
+
+function playRound(humanChoice,computerChoice){
+  
+
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
 
 
