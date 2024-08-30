@@ -1,4 +1,3 @@
-console.log("Hello World! ")
 
 let humanScore = 0;
 let computerScore = 0;
@@ -13,27 +12,12 @@ function getComputerChoice(){
     } else {
         return "scissors";
     }
-
 }
 
 
-
 function getHumanChoice(){
-    // put out a message to user 
-    // get user input 
-    // write if statement return rock , paper or scissors 
-
-
     let message = prompt("rock , paper or scissors?"); // ask user 
     message = message.toLowerCase(); // ensures answer is not case-sensitive
-
-
-
-    while (message == null){
-        message = prompt("rock , paper or scissors")
-    } // ensures answer is put into prompt ! 
-
-
 
     if(message == "rock"){
         return "rock";
@@ -42,33 +26,29 @@ function getHumanChoice(){
     } else if (message == "scissors"){
         return "scissors";
     } else {
-        // while(prompt( "try again :)")); // validation of input => could be next time turn into a function itself maybe 
         return "try again";
     }; 
     
 
-
-// could alternatively do switch statement ! 
-    // switch(message){
-    //     case "rock":
-    //         return "rock";
-    //         break;
-    //     case "paper":
-    //         return "paper";
-    //         break;
-    //     case "scissors":
-    //         return "scissors";
-    //         break;
-    //     default:
-    //         return "try again :)"
-    // }
-
 }
 
-console.log(getHumanChoice());
+
 
 function playRound(humanChoice,computerChoice){
-  
+    
+    humanChoice = humanChoice.toLowerCase();
+    console.log("humanChoice = ", humanChoice);
+    console.log("computerChoice = ", computerChoice);
+
+    if(humanChoice == "rock" && computerChoice == "scissors" ||humanChoice == "paper" && computerChoice == "rock" || humanChoice == "scissors" && computerChoice == "paper"){
+        humanScore++
+        return "Player Wins ! Score is : " +  humanScore;
+    } else if(computerChoice == "rock" && humanChoice == "scissors" ||computerChoice == "paper" && humanChoice == "rock" || computerChoice == "scissors" && humanChoice == "paper"){
+        computerScore++
+        return "Computer wins! Score is: " + computerScore;
+    } else if (humanChoice == computerChoice) {
+        return "Tie ! No one Wins :("
+    }
 
 
 }
@@ -76,7 +56,9 @@ function playRound(humanChoice,computerChoice){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+
+console.log(playRound(humanSelection, computerSelection));
 
 
 

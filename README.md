@@ -18,3 +18,10 @@ My game is played against the computer called Rock , Paper Or Scissors. Will hav
 I realised that there are many ways of doing this task. I decided for the getComputerChoice to make use of the math.random() and for the getHumanChoice it just relied on the user input which I used prompts for. However , it was at this stage I realised that I was using too many if/else statements that were neither DRY or clean code. So I quickly researched other ways on to make it more practical. 
 
 For me , I could have continued using if/else statements but I want to become a better coder , even if that makes this assignment 10x more harder :joy: 
+
+
+
+### If I had more time : 
+
+- Do some validation to ensure that input is checked and only 1 of the 3 choices ! 
+- a way to make sure that prompt keeps up until there is an input - ensures answer is put into prompt 
